@@ -1,0 +1,32 @@
+- title @post.name
+
+-if !@post.category.nil?
+  %p 
+    %strong Category:
+    = link_to @post.category.name, category_path(@post.category)
+
+%p
+  %strong Owner:
+  = @post.user.email
+
+%p
+  %strong Contact:
+  = @post.contact
+%p
+  %strong RSVP by:
+  = !@post.rsvp_by.nil? ? @post.rsvp_by.strftime("%b %e, %Y by %l %P") : nil
+%p
+  %strong Date of:
+  = !@post.date_of.nil? ? @post.date_of.strftime("%b %e, %Y at %l %P") : nil
+%p
+  %strong Description:
+  = !@post.description.nil? ? @post.description : nil
+
+%p
+  = link_to "Back to events", posts_path  
+  -if can? :update, @post
+    |
+    = link_to "Edit", edit_post_path(@post)
+  -if can? :destroy, @post
+    |
+    = link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete
