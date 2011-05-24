@@ -1,4 +1,7 @@
-- title "Edit Post"
+- title @title + @post.name
 
-= render 'form'
+%div.section
+  = render 'form'
 
+%p
+  = link_to "Return to Posts", posts_path

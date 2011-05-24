@@ -1,8 +1,7 @@
-- title "Edit Category"
+- title @title + @category.name
 
-= render 'form'
+%div.section
+  = render 'form'
 
 %p
-  = link_to "Show", @category
-  |
-  = link_to "View All", categories_path
+  = link_to "Return to Categories", categories_path

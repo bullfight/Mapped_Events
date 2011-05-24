@@ -1,13 +1,11 @@
-- title "Categories"
-
-- if can? :create, @category
-  = render 'form'
+- title @title
 
 - for category in @categories
-  %li
+  %div.section
     = link_to(category.name, category)    
-    = " - " + category.description
+    -if !category.description.blank?
+      = " - " + category.description
 
 %p
-  -if can? :update, @categories
-    = link_to "New Category", new_category_path
+  -if can? :create, @category
+    = link_to "Add a New Category", new_category_path

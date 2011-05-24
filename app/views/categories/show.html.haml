@@ -1,25 +1,26 @@
-- title @category.name
+- title @title + @category.name
 
-%p
-  %strong Description:
-  = @category.description
+%div.section
+  %p
+    %strong Description:
+    = @category.description
   
-%p
-  %strong Owner:
-  = @category.user.email
+  %p
+    %strong Owner:
+    = @category.user.email
 
   
-- for post in @category.posts  
-  %li
+- for post in @category.posts
+  %div.section
     = link_to post.name, post
     -if !post.date_of.nil?
       = " - " + post.date_of.strftime("%b %e, %Y by %l %P")
       
 %p
-  = link_to "Back to Categories", categories_path
+  = link_to "Return to Categories", categories_path
   -if can? :update, @category
     |
     = link_to "Edit", edit_category_path(@category)
   -if can? :destroy, @category
     |
-    = link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete
+    = link_to "Delete Category", @category, :confirm => 'Are you sure?', :method => :delete

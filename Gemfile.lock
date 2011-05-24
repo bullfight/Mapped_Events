@@ -51,7 +51,7 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
-    geokit (1.5.0)
+    geocoder (1.0.1)
     haml (3.1.1)
     i18n (0.5.0)
     jquery-rails (1.0.7)
@@ -114,7 +114,7 @@ DEPENDENCIES
   cancan
   devise
   formtastic
-  geokit
+  geocoder
   haml
   jquery-rails
   mocha

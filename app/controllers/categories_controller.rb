@@ -3,15 +3,18 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
   
   def index
+    @title = "Categories"
     @categories = Category.all
     @category = Category.new
   end
 
   def show
+    @title = "Event - "
     #@category = Category.find(params[:id])
   end
 
   def new
+    @title = "New Category"
     #@category = Category.new
   end
 
@@ -26,6 +29,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @title = "Edit - "
     #@category = Category.find(params[:id])
   end
 

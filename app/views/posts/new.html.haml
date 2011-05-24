@@ -1,5 +1,6 @@
-- title "New Post"
+- title @title
 
-= render 'form'
+%div.section
+  = render 'form'
 
-%p= link_to "Back to List", posts_path
+%p= link_to "Return to Posts", posts_path

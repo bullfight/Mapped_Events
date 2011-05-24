@@ -17,19 +17,26 @@ a
   overflow: hidden
 
 #container
-  width: 75%
+  position: relative
+  width: 90%
   margin: 0 auto
-  background: white
+  background: #fafafa
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#fafafa))
+  background: -moz-linear-gradient(top, #f2f2f2, #fafafa)
   padding: 20px 40px
   border: solid 1px black
   margin-top: 20px
+  padding: 20px 40px
+  border-radius: 5px
 
 #flash_notice,
 #flash_error,
 #flash_alert
   position: relative
+  clear: right
   padding: 5px 8px
   margin: 10px 0
+  border-radius: 5px
 
 #flash_notice
   background-color: #ccffcc
@@ -66,8 +73,42 @@ a
   ul
     margin: 0
 
-#user_nav
-  position: relative
-  
+#user_nav,
 #post_nav
   position: relative
+  clear: right
+  float: right
+  margin: 5px auto
+  padding: 10px
+  background-color: #eee
+  border: solid 1px #ccc
+  border-radius: 5px
+  p
+    text-align: right
+  
+#header
+  position: relative
+  background-color: #eee
+  border: solid 1px #ccc
+  border-radius: 5px
+  clear: right
+  margin: 5px auto
+  padding: 10px
+  font:
+    family: Verdana, Helvetica, Arial
+    size: 22px
+  a
+    color: #000
+  a:focus
+    color: orange
+    
+.section
+  margin: 0 auto
+  margin-bottom: 20px
+  padding: 10px
+  width: auto
+  background-color: #eee
+  border: solid 1px #ccc
+  border-radius: 5px
+ 
+  

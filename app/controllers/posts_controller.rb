@@ -3,15 +3,18 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   
   def index
+    @title = "Events"
     @posts = Post.find(:all, :order => :date_of)
     @post = Post.new
   end
   
   def show
+    @title = "Event - "
     #@post = Post.find(params[:id])
   end
 
   def new
+    @title = "New Event"
     #@post = Post.new
   end
 
@@ -26,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @title = "Edit - "
     #@post = Post.find(params[:id])
   end
 

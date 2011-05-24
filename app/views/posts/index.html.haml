@@ -1,25 +1,32 @@
-- title "Events"
+- title @title
+
 
 - for post in @posts  
-  %h2
-    = link_to post.name, post
-  %p
-    = post.user.email
-    
-  -if !post.category.nil?
-    %p 
-      %strong Category:
-      = link_to post.category.name, category_path(post.category)
-  %p
-    %strong Date of:
-    -if !post.date_of.nil?
-      = post.date_of.strftime("%b %e, %Y by %l %P")
-    
-  %p
-    = link_to 'permalink', post
-    -if can? :update, post
-      |
-      = link_to 'Edit', edit_post_path(post)
-    -if can? :destroy, post
-      |
-      = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+  %div.section
+    %h2
+      = link_to post.name, post
+    %p
+      %strong Owner
+      = post.user.email
+  
+    -if !post.category.nil?
+      %p 
+        %strong Category:
+        = link_to post.category.name, category_path(post.category)
+    %p
+      %strong Date of:
+      -if !post.date_of.nil?
+        = post.date_of.strftime("%b %e, %Y by %l %P")
+  
+    %p
+      = link_to 'permalink', post
+      -if can? :update, post
+        |
+        = link_to 'Edit', edit_post_path(post)
+      -if can? :destroy, post
+        |
+        = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+
+%p
+  -if can? :create, @post
+    = link_to "Add a New Event", new_post_path
