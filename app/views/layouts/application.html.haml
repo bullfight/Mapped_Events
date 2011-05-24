@@ -17,6 +17,7 @@
       #header
         %span= link_to "Events", posts_path
         %span= link_to "Categories", categories_path
+        %span= link_to "Venues", venues_path
     
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

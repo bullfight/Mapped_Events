@@ -1,0 +1,19 @@
+one:
+  name: MyString
+  description: MyText
+  street_address: MyText
+  city: MyText
+  postcode: MyText
+  country: MyText
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  name: MyString
+  description: MyText
+  street_address: MyText
+  city: MyText
+  postcode: MyText
+  country: MyText
+  latitude: 1.5
+  longitude: 1.5

@@ -1,0 +1,27 @@
+- title "Venues"
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Street address
+    %th City
+    %th Postcode
+    %th Country
+    %th Latitude
+    %th Longitude
+  - for venue in @venues
+    %tr
+      %td= venue.name
+      %td= venue.description
+      %td= venue.street_address
+      %td= venue.city
+      %td= venue.postcode
+      %td= venue.country
+      %td= venue.latitude
+      %td= venue.longitude
+      %td= link_to 'Show', venue
+      %td= link_to 'Edit', edit_venue_path(venue)
+      %td= link_to 'Destroy', venue, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Venue", new_venue_path

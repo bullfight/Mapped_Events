@@ -1,5 +1,7 @@
 Eurodesign::Application.routes.draw do
 
+  resources :venues
+
   root :to => "posts#index"
   resources :posts
   resources :categories

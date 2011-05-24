@@ -1,0 +1,33 @@
+- title "Venue"
+
+%p
+  %strong Name:
+  = @venue.name
+%p
+  %strong Description:
+  = @venue.description
+%p
+  %strong Street Address:
+  = @venue.street_address
+%p
+  %strong City:
+  = @venue.city
+%p
+  %strong Postcode:
+  = @venue.postcode
+%p
+  %strong Country:
+  = @venue.country
+%p
+  %strong Latitude:
+  = @venue.latitude
+%p
+  %strong Longitude:
+  = @venue.longitude
+
+%p
+  = link_to "Edit", edit_venue_path(@venue)
+  |
+  = link_to "Destroy", @venue, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", venues_path
