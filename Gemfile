@@ -13,7 +13,7 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'cancan'
-gem 'nbrew-country_select'
+# rails plugin install https://github.com/chrislerum/country_select.git
 
 
 # Use unicorn as the web server

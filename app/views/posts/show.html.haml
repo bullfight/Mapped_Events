@@ -6,6 +6,11 @@
       %strong Category:
       = link_to @post.category.name, category_path(@post.category)
 
+  -if !@post.venue.nil?
+    %p 
+      %strong Venue:
+      = link_to @post.venue.name, venue_path(@post.venue)
+
   %p
     %strong Owner:
     = @post.user.email

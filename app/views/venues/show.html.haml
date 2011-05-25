@@ -1,33 +1,43 @@
 - title "Venue"
 
-%p
-  %strong Name:
-  = @venue.name
-%p
-  %strong Description:
-  = @venue.description
-%p
-  %strong Street Address:
-  = @venue.street_address
-%p
-  %strong City:
-  = @venue.city
-%p
-  %strong Postcode:
-  = @venue.postcode
-%p
-  %strong Country:
-  = @venue.country
-%p
-  %strong Latitude:
-  = @venue.latitude
-%p
-  %strong Longitude:
-  = @venue.longitude
+%div.section
 
-%p
-  = link_to "Edit", edit_venue_path(@venue)
-  |
-  = link_to "Destroy", @venue, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", venues_path
+  %p
+    %strong Name:
+    = @venue.name
+  %p
+    %strong Description:
+    = @venue.description
+  %p
+    %strong Street Address:
+    = @venue.street_address
+  %p
+    %strong City:
+    = @venue.city
+  %p
+    %strong Postcode:
+    = @venue.postcode
+  %p
+    %strong Country:
+    = @venue.country
+  %p
+    %strong Latitude:
+    = @venue.latitude
+  %p
+    %strong Longitude:
+    = @venue.longitude
+
+  %p
+    = link_to "Return to Venues", venues_path
+    -if can? :update, @venue
+      |
+      = link_to "Edit", edit_venue_path(@venue)
+    -if can? :destroy, @venue
+      |
+      = link_to "Delete Category", @venue, :confirm => 'Are you sure?', :method => :delete
+      
+- for post in @venue.posts
+  %div.section
+    = link_to post.name, post
+    -if !post.date_of.nil?
+      = " - " + post.date_of.strftime("%b %e, %Y by %l %P")

@@ -8,20 +8,20 @@ class Ability
       can :manage, :all
     elsif !user.email.blank?
       can :read, :all
-      can :create, Category
-      can :create, Post
-      can :update, Post do |post|
-        post.try(:user) == user
+      
+      [Post, Category, Venue].each do |m|
+      
+        can :create, m
+      
+        can :update, m do |mod|
+          mod.try(:user) == user
+        end
+        can :destroy, m do |mod|
+          mod.try(:user) == user
+        end      
+      
       end
-      can :destroy, Post do |post|
-        post.try(:user) == user
-      end      
-      can :update, Category do |category|
-        category.try(:user) == user
-      end
-      can :destroy, Category do |category|
-        category.try(:user) == user
-      end
+      
     else
       can :read, :all
     end
