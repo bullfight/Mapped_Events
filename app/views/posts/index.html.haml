@@ -3,7 +3,10 @@
 - form_tag( posts_path, :method => :get ) do
   = text_field_tag :search, params[:search], :class => "search", :placeholder => "Search for Events..."
 
-%div{:id => "map", :path => "posts.json", :lat => "#{@posts.first.venue.latitude}", :lon => "#{@posts.first.venue.longitude}" }
+- lat = (@posts.first.venue.latitude if @posts.first) || nil
+- lon = (@posts.first.venue.longitude if @posts.first) || nil
+
+%div{:id => "map", :path => "posts.json", :lat => lat || 51.92, :lon => lon || 4.49 }
 
 
 - for post in @posts  

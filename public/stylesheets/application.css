@@ -79,7 +79,8 @@ a {
   #post_nav p {
     text-align: right; }
 
-#header {
+#header,
+#footer {
   position: relative;
   background-color: #eeeeee;
   border: solid 1px #cccccc;
@@ -89,10 +90,15 @@ a {
   padding: 10px;
   font-family: Verdana, Helvetica, Arial;
   font-size: 22px; }
-  #header a {
+  #header a,
+  #footer a {
     color: black; }
-  #header a:focus {
+  #header a:focus,
+  #footer a:focus {
     color: orange; }
+
+#footer {
+  font-size: 12px; }
 
 .user_nav {
   float: right;

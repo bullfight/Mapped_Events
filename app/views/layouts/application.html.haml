@@ -53,3 +53,11 @@
 
       %div.clear
       = yield
+
+      #footer
+        %span
+          = link_to "Events", posts_path
+          |
+          = link_to "Categories", categories_path
+          |
+          = link_to "Venues", venues_path

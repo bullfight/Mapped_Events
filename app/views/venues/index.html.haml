@@ -3,7 +3,10 @@
 - form_tag( venues_path, :method => :get ) do
   = text_field_tag :search, params[:search], :class => "search", :placeholder => "Search for Venues..."
 
-%div{:id => "map", :path => "venues.json", :lat => "#{@venues.first.latitude}", :lon => "#{@venues.first.longitude}" }
+- lat = (@venues.first.latitude if @venues.first) || nil
+- lon = (@venues.first.longitude if @venues.first) || nil
+
+%div{:id => "map", :path => "venues.json", :lat => lat || 51.92, :lon => lon || 4.49 }
 
 - for venue in @venues
   %div.section
