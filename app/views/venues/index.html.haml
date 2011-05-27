@@ -6,7 +6,7 @@
 - lat = (@venues.first.latitude if @venues.first) || nil
 - lon = (@venues.first.longitude if @venues.first) || nil
 
-%div{:id => "map", :path => "venues.json", :lat => lat || 51.92, :lon => lon || 4.49 }
+%div{:id => "map", :data => { :path => "venues.json", :lat => lat || 51.92, :lon => lon || 4.49} }
 
 - for venue in @venues
   %div.section

@@ -6,7 +6,7 @@
 - lat = (@posts.first.venue.latitude if @posts.first) || nil
 - lon = (@posts.first.venue.longitude if @posts.first) || nil
 
-%div{:id => "map", :path => "posts.json", :lat => lat || 51.92, :lon => lon || 4.49 }
+%div{:id => "map", "data-path" => "posts.json", "data-lat" => lat || 51.92, "data-lon" => lon || 4.49 }
 
 
 - for post in @posts  

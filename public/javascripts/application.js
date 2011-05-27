@@ -5,12 +5,12 @@
 
 $(document).ready(function(){
   
-  $("map").ready(function() {
+  $("#map").ready(function() {
     
-    var path = document.getElementById("map").getAttribute("path")
+    var path = document.getElementById("map").getAttribute("data-path")
     
-    var latitude = document.getElementById("map").getAttribute("lat")
-    var longitude = document.getElementById("map").getAttribute("lon")
+    var latitude = document.getElementById("map").getAttribute("data-lat")
+    var longitude = document.getElementById("map").getAttribute("data-lon")
     
     var po = org.polymaps;
 
