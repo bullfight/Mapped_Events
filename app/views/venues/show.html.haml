@@ -1,6 +1,10 @@
 - title "Venue"
 
-%div{:id => "map", :path => "#{@venue.id}.json", :lat => "#{@venue.latitude}", :lon => "#{@venue.longitude}" }
+- id = (@venue.id if @venue) || nil
+- lat = (@venue.latitude if @venue) || nil
+- lon = (@venue.longitude if @venue) || nil
+
+%div{:id => "map", :data => { :path => "#{id}.json", :lat => lat || 51.92, :lon => lon || 4.49} }
 
 %div.section
 

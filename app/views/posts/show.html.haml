@@ -1,6 +1,10 @@
 - title @title + @post.name
 
-%div{:id => "map", :path => "#{@post.id}.json", :lat => "#{@post.venue.latitude}", :lon => "#{@post.venue.longitude}" }
+- id = (@post.id if @post) || nil
+- lat = (@post.venue.latitude if @post) || nil
+- lon = (@post.venue.longitude if @post) || nil
+
+%div{:id => "map", :data => { :path => "#{id}.json", :lat => lat || 51.92, :lon => lon || 4.49} }
 
 %div.section
   -if !@post.category.nil?
