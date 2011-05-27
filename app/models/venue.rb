@@ -8,6 +8,10 @@ class Venue < ActiveRecord::Base
   
   validates_presence_of :name, :street_address, :city, :postcode, :country
   
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
+  
   private
   def address
     [street_address, city, postcode, country].compact.join(', ')

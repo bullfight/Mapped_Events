@@ -1,11 +1,10 @@
 Eurodesign::Application.routes.draw do
 
-  resources :venues
-
   root :to => "posts#index"
   resources :posts
   resources :categories
-  
+  resources :venues
+
   devise_for :users
 
   # The priority is based upon order of creation:

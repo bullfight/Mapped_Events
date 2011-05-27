@@ -1,14 +1,23 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
-  
+
   def index
     @title = "Events"
-    @posts = Post.find(:all, :order => :date_of)
+    @posts = Post.search(params[:search])#, :order => :date_of)
+    
+    respond_to do |format|
+      format.html
+      format.json { render :partial => "posts/index.json" }
+    end
   end
   
   def show
     @title = "Event - "
+    respond_to do |format|
+      format.html
+      format.json { render :partial => "posts/show.json" }
+    end
   end
 
   def new

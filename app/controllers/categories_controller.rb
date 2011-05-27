@@ -1,15 +1,18 @@
 class CategoriesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
-  
+  respond_to :html, :xml, :json
+
   def index
     @title = "Categories"
     @categories = Category.all
+    respond_with(@categories)
   end
 
   def show
     @title = "Event - "
     #@category = Category.find(params[:id])
+    respond_with(@category)
   end
 
   def new

@@ -1,5 +1,10 @@
 - title "Venues"
 
+- form_tag( venues_path, :method => :get ) do
+  = text_field_tag :search, params[:search], :class => "search", :placeholder => "Search for Venues..."
+
+%div{:id => "map", :path => "venues.json", :lat => "#{@venues.first.latitude}", :lon => "#{@venues.first.longitude}" }
+
 - for venue in @venues
   %div.section
     %h2

@@ -20,3 +20,27 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+  #development:
+  #  adapter: postgresql
+  #  template: template_postgis
+  #  encoding: unicode
+  #  database: pgis_development
+  #  username: pschmitz
+  #  password:
+  #
+  #test:
+  #  adapter: postgresql
+  #  template: template_postgis
+  #  encoding: unicode
+  #  database: pgis_test
+  #  username: pschmitz
+  #  password:
+  #
+  #production:
+  #  adapter: postgresql
+  #  template: template_postgis
+  #  encoding: unicode
+  #  database: pgis_production
+  #  username: postgres
+  #  password:

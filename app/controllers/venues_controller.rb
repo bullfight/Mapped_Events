@@ -1,13 +1,23 @@
 class VenuesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
-
-  def index
-    @venues = Venue.all
-  end
-
-  def show
   
+  def index
+    @venues = Venue.search(params[:search])#, :order => :date_of)
+        
+    respond_to do |format|
+      format.html
+      format.json { render :partial => "venues/index.json" }
+    end
+    
+  end
+  
+  def show  
+    
+    respond_to do |format|
+      format.html
+      format.json { render :partial => "venues/show.json" }
+    end
   end
 
   def new
@@ -23,6 +33,7 @@ class VenuesController < ApplicationController
     else
       render :action => 'new'
     end
+    
   end
 
   def edit
@@ -43,4 +54,5 @@ class VenuesController < ApplicationController
     @venue.destroy
     redirect_to venues_url, :notice => "Successfully destroyed venue."
   end
+    
 end

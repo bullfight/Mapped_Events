@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 gem 'sqlite3'
+#gem 'pg'
+#gem "postgis_adapter", :git => 'git://github.com/nofxx/postgis_adapter.git'
+
 
 gem 'haml'
 gem 'sass'
@@ -13,6 +16,11 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'cancan'
+gem 'gravtastic'
+gem 'json_pure'
+gem 'nofxx-georuby'
+gem 'geojson'
+
 # rails plugin install https://github.com/chrislerum/country_select.git
 
 

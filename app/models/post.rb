@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
   belongs_to :venue
   
   validates_presence_of :name, :date_of, :contact, :venue_id
+  
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
 end
