@@ -7,8 +7,10 @@ Authorization/Authentication
 * CanCan
 
 For forms I am using 
+
 * Formtastic
 * validation_reflection
 
 Geocoding
+
 * Alex Reisner's fantastic Geocoder
