@@ -1,10 +1,16 @@
 = semantic_form_for @post do |f|
   - f.inputs do
+    %h3 Event Details
     = f.input :name, :label => "Event name"
     = f.input :rsvp_by, :start_year => Time.now.year, :minute_step => 15, :end_year => Time.now.year + 1
     = f.input :date_of, :start_year => Time.now.year, :minute_step => 15, :end_year => Time.now.year + 1
     = f.input :contact, :hint => "email address of organizer"
-    = f.input :category
-    = f.input :venue
     = f.input :description
+    
+    %h3 Select Category 
+    = f.input :category
+    %h3 or add new
+    = f.input :name, :for => :category
+    = f.input :description, :for => :category
+        
   = f.buttons
